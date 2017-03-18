@@ -8741,10 +8741,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Sites\\TheWorld\\TheWorld\\TheWorld\\TheWorld.csproj",
+      "projectUniqueName": "C:\\Sites\\TheWorld\\TheWorld\\TheWorld.csproj",
       "projectName": "TheWorld",
-      "projectPath": "C:\\Sites\\TheWorld\\TheWorld\\TheWorld\\TheWorld.csproj",
-      "outputPath": "C:\\Sites\\TheWorld\\TheWorld\\TheWorld\\obj\\",
+      "projectPath": "C:\\Sites\\TheWorld\\TheWorld\\TheWorld.csproj",
+      "outputPath": "C:\\Sites\\TheWorld\\TheWorld\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"
