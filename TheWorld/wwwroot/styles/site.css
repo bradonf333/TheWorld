@@ -23,6 +23,9 @@ input[type=text], input[type=text], textarea {
     background-color: #383838;
     color: #ffffff;
     padding: 8px 5px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 /*Image that is within sidebar*/
