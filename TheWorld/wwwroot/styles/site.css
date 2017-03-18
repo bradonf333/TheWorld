@@ -13,12 +13,15 @@ input[type=text], input[type=text], textarea {
 }
 
 #main {
-    background-color: #c5c5c5
+    background-color: #c5c5c5;
+    padding: 4px;
+    margin: 0;
 }
 
 #footer {
     background-color: #383838;
     color: #ffffff;
+    padding: 8px 5px;
 }
 
 /*Image that is within sidebar*/
