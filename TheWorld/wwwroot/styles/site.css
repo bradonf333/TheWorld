@@ -33,3 +33,7 @@ input[type=text], input[type=text], textarea {
 .menu li {
     list-style-type: none;
 }
+
+.menu li.active {
+    font-weight: bold;
+}
