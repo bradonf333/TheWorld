@@ -42,3 +42,14 @@ input[type=text], input[type=text], textarea {
 .menu li.active {
     font-weight: bold;
 }
+
+#sidebar {
+    background: #383838;
+    color: #ffffff;
+    position: fixed;
+    height: 100%;
+    width: 250px;
+    overflow: hidden;
+    left: 0;
+
+}
