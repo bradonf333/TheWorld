@@ -26,3 +26,6 @@ input[type=text], input[type=text], textarea {
     max-width: 50px;
 }
  
+.menu {
+    font-size: 12px;
+}
