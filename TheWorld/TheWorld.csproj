@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="wwwroot\img\user1.jpg" />
     <Content Include="wwwroot\styles\site.css" />
   </ItemGroup>
 

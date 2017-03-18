@@ -11,3 +11,17 @@ label {
 input[type=text], input[type=text], textarea {
     width: 150px;
 }
+
+#main {
+    background-color: #c5c5c5
+}
+
+#footer {
+    background-color: #383838;
+    color: #ffffff;
+}
+
+/*Image that is within sidebar*/
+.headshot {
+    max-width: 50px;
+}
