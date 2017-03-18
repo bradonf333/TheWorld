@@ -29,3 +29,7 @@ input[type=text], input[type=text], textarea {
 .menu {
     font-size: 12px;
 }
+
+.menu li {
+    list-style-type: none;
+}
