@@ -39,13 +39,13 @@ input[type=text], input[type=text], textarea {
     font-size: 12px;
 }
 
-.menu li {
-    list-style-type: none;
-}
+    .menu li {
+        list-style-type: none;
+    }
 
-.menu li.active {
-    font-weight: bold;
-}
+        .menu li.active {
+            font-weight: bold;
+        }
 
 #sidebar {
     background: #383838;
@@ -58,6 +58,14 @@ input[type=text], input[type=text], textarea {
     margin: 0;
 }
 
+    #sidebar.hide-sidebar {
+        left: -250px;
+    }
+
 #wrapper {
     margin: 0 0 0 250px;
+}
+
+#wrapper.hide-sidebar {
+    margin-left: 0;
 }
