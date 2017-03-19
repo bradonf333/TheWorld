@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <Content Include="wwwroot\img\user1.jpg" />
+    <Content Include="wwwroot\scripts\site.js" />
     <Content Include="wwwroot\styles\site.css" />
   </ItemGroup>
 
