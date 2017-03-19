@@ -60,12 +60,13 @@ input[type=text], input[type=text], textarea {
 
     #sidebar.hide-sidebar {
         left: -250px;
+        transition: left ease 25s;
     }
 
 #wrapper {
     margin: 0 0 0 250px;
 }
 
-#wrapper.hide-sidebar {
-    margin-left: 0;
-}
+    #wrapper.hide-sidebar {
+        margin-left: 0;
+    }
