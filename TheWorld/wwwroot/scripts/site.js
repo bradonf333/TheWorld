@@ -1,14 +1,15 @@
 ﻿// Self executing anonymous function or an immediately invoked function expression
 (function () {
-    var ele = document.getElementById("username");
-    ele.innerHTML = "Bradon Fredrickson";
 
-    var main = document.getElementById("main");
-    main.onmouseenter = function () {
-        main.style.backgroundColor = "#888";
-    };
+    var ele = $("#username");
+    ele.text("Bradon Fredrickson");
 
-    main.onmouseleave = function () {
-        main.style.backgroundColor = "";
-    };
+    var main = $("#main");
+    main.on("mouseenter", function () {
+        main.style = "background-color: #888;";
+    });
+
+    main.on("mouseleave", function () {
+        main.style = "";
+    });
 })();
