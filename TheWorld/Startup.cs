@@ -23,16 +23,16 @@ namespace TheWorld
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             // Changes the default files request
-            app.UseDefaultFiles();
+            //app.UseDefaultFiles();
             // Static files finds the files
             app.UseStaticFiles();
 
             app.UseMvc(config =>
             {
                 config.MapRoute(
-                    name: "Default",
+                    name: "default",
                     template: "{controller}/{action}/{id?}",
-                    defaults: new { controller = "AppController", action = "Index" }
+                    defaults: new { controller = "App", action = "Index" }
                     );
             });
         }
