@@ -22,7 +22,12 @@ namespace TheWorld
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
-            app.UseDeveloperExceptionPage();
+            // Checks to make sure this is a developement machine (check using alt+enter
+            // If so then we can show the exception page which is easier to debug
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
 
             // Changes the default files request
             //app.UseDefaultFiles();
