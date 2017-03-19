@@ -22,9 +22,15 @@
     // Using jQuery gets both these elements and puts them in a "wrapped set" of DOM elements
     var $sidebarAndWrapper = $("#sidebar,#wrapper");
 
-    // When the sidebarToggle button is pressed will toggle the hide-sidebar class as necessary
+    // When the sidebarToggle button is pressed will toggle the hide-sidebar class as necessary.
+    // Also will change the toggle button text depending on the state of the hide-sidebar
     $("#sidebarToggle").on("click", function () {
         // ToggleClass adds class if doesnt exist or removes if it does
         $sidebarAndWrapper.toggleClass("hide-sidebar");
+        if ($sidebarAndWrapper.hasClass("hide-sidebar")) {
+            $(this).text("Show Sidebar");
+        } else {
+            $(this).text("Hide Sidebar");
+        }
     });
 })();
