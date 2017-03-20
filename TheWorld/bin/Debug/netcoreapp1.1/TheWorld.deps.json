@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v1.1",
-    "signature": "48ff2089c7b44601fc6f0b7afbbd47db230a1f95"
+    "signature": "c59c9ff0ae44ea92ae6d5b729cf8437b608f39f9"
   },
   "compilationOptions": {
     "defines": [
@@ -29,6 +29,7 @@
           "Microsoft.AspNetCore.Mvc.TagHelpers": "1.1.2",
           "Microsoft.AspNetCore.StaticFiles": "1.1.1",
           "Microsoft.NETCore.App": "1.1.1",
+          "Microsoft.jQuery.Unobtrusive.Validation": "3.2.3",
           "jQuery.Validation": "1.16.0"
         },
         "runtime": {
@@ -38,10 +39,10 @@
           "TheWorld.dll": {}
         }
       },
-      "jquery/1.4.4": {},
+      "jquery/1.8.0": {},
       "jquery.validation/1.16.0": {
         "dependencies": {
-          "jQuery": "1.4.4"
+          "jQuery": "1.8.0"
         }
       },
       "microsoft.applicationinsights/2.2.0": {
@@ -1111,6 +1112,12 @@
         },
         "compile": {
           "lib/netstandard1.0/Microsoft.Extensions.WebEncoders.dll": {}
+        }
+      },
+      "microsoft.jquery.unobtrusive.validation/3.2.3": {
+        "dependencies": {
+          "jQuery": "1.8.0",
+          "jQuery.Validation": "1.16.0"
         }
       },
       "microsoft.net.http.headers/1.1.1": {
@@ -2982,12 +2989,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "jquery/1.4.4": {
+    "jquery/1.8.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-kexCeYIZehR5fRjo8CK1sngN5SZEQRFNfCYZHMS1RxwEEiSKetBw/gliYJcLJdJEBB+e9aHqleLCjuaSI7u23g==",
-      "path": "jquery/1.4.4",
-      "hashPath": "jquery.1.4.4.nupkg.sha512"
+      "sha512": "sha512-laDFQRJrIRHT0Z0GVYklMt3bE0iu0MZFJwHwg21kt3SHb7Bj8TdNiM3K+ZdK1DzB8ZxKy8z7NkJvwMas+dmHBw==",
+      "path": "jquery/1.8.0",
+      "hashPath": "jquery.1.8.0.nupkg.sha512"
     },
     "jquery.validation/1.16.0": {
       "type": "package",
@@ -3499,6 +3506,13 @@
       "sha512": "sha512-yjNKsGAF9a72HXivVwihjHZYhJPMSZS5pK/HsodiSS/jwhc9uq6pfdfnA7JU/nTBdJnQTETnBq9lkQJeYYO8KQ==",
       "path": "microsoft.extensions.webencoders/1.1.1",
       "hashPath": "microsoft.extensions.webencoders.1.1.1.nupkg.sha512"
+    },
+    "microsoft.jquery.unobtrusive.validation/3.2.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-zA9SHI3B0+JKcQDybm62TOK546TeqipYDGA1ytUUOVPHUbxOb80h5LxtMKuWph9NpsTqvsarV1ZPf/v9TB2sdA==",
+      "path": "microsoft.jquery.unobtrusive.validation/3.2.3",
+      "hashPath": "microsoft.jquery.unobtrusive.validation.3.2.3.nupkg.sha512"
     },
     "microsoft.net.http.headers/1.1.1": {
       "type": "package",
