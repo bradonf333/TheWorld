@@ -1,16 +1,23 @@
-﻿@model TheWorld.ViewModel.ContactViewModel
-@{ 
+﻿<!--
+Tag Helpers: asp-for="example"
+    -The name in the quotes needs to match a ViewModel
+-->
+<!-- Tells the view what model for this view page it should be getting and
+     sending data to and from
+-->
+@model TheWorld.ViewModel.ContactViewModel
+@{
     ViewBag.Title = "Contact Page";
 }
 
 <h2>Contact Me</h2>
 <form>
     <label asp-for="Name">Name</label>
-    <input asp-for="Name"/>
+    <input asp-for="Name" />
     <label asp-for="Email">Email</label>
-    <input type="email" asp-for="Email"/>
+    <input type="email" asp-for="Email" />
     <label asp-for="Message">Message</label>
-    <textarea cols="45" rows="4" asp-for="Message"></textarea>
+    <textarea cols="40" rows="4" asp-for="Message"></textarea>
     <div>
         <input type="submit" value="Send Message" />
     </div>
