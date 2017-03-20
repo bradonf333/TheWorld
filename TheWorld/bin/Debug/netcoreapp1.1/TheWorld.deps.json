@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v1.1",
-    "signature": "7b9d3356ef9e7a5bf51da20a95b792b9c806fc63"
+    "signature": "48ff2089c7b44601fc6f0b7afbbd47db230a1f95"
   },
   "compilationOptions": {
     "defines": [
@@ -28,13 +28,20 @@
           "Microsoft.AspNetCore.Mvc": "1.1.2",
           "Microsoft.AspNetCore.Mvc.TagHelpers": "1.1.2",
           "Microsoft.AspNetCore.StaticFiles": "1.1.1",
-          "Microsoft.NETCore.App": "1.1.1"
+          "Microsoft.NETCore.App": "1.1.1",
+          "jQuery.Validation": "1.16.0"
         },
         "runtime": {
           "TheWorld.dll": {}
         },
         "compile": {
           "TheWorld.dll": {}
+        }
+      },
+      "jquery/1.4.4": {},
+      "jquery.validation/1.16.0": {
+        "dependencies": {
+          "jQuery": "1.4.4"
         }
       },
       "microsoft.applicationinsights/2.2.0": {
@@ -2974,6 +2981,20 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "jquery/1.4.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kexCeYIZehR5fRjo8CK1sngN5SZEQRFNfCYZHMS1RxwEEiSKetBw/gliYJcLJdJEBB+e9aHqleLCjuaSI7u23g==",
+      "path": "jquery/1.4.4",
+      "hashPath": "jquery.1.4.4.nupkg.sha512"
+    },
+    "jquery.validation/1.16.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5vvz+cw3ykW15RmXoc6GzSKndb1Se38u4cJ3cqEvZxmInf/9NwvOxu2EUYdK2mCsdDsvGn2m9HA7s9NOrr8Wdw==",
+      "path": "jquery.validation/1.16.0",
+      "hashPath": "jquery.validation.1.16.0.nupkg.sha512"
     },
     "microsoft.applicationinsights/2.2.0": {
       "type": "package",
