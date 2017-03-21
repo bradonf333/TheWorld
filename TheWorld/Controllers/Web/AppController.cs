@@ -50,6 +50,8 @@ namespace TheWorld.Controllers.Web
             if (ModelState.IsValid)
             {
                 _mailService.SendMail(_config["MailSettings:ToAddress"], model.Email, "From TheWorld", model.Message);
+
+                ViewBag.UserMessage = "Message Sent";
             }
             return View();
         }
