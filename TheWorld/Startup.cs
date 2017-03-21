@@ -13,14 +13,26 @@ namespace TheWorld
 {
     public class Startup
     {
+        private IHostingEnvironment _env;
+
+        public Startup(IHostingEnvironment env)
+        {
+            _env = env;
+        }
+
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-#if DEBUG
-            services.AddScoped<IMailService, DebugMailService>();
-#else
-#endif
+            // Can check if the env is a development machine or can test for a made up env created by company
+            if (_env.IsDevelopment() || _env.IsEnvironment("Testing"))
+            {
+                services.AddScoped<IMailService, DebugMailService>();
+            }
+            else
+            {
+                // Real mail implement
+            }
             services.AddMvc();
         }
 
