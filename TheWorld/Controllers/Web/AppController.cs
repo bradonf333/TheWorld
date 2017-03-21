@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using TheWorld.ViewModel;
 using TheWorld.Services;
 using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace TheWorld.Controllers.Web
 {
@@ -39,6 +40,12 @@ namespace TheWorld.Controllers.Web
         [HttpPost]
         public IActionResult Contact(ContactViewModel model)
         {
+            // Example of an error we can generate - this will show up on the email field
+            if (model.Email.Contains("aol.com")) ModelState.AddModelError("Email", "We don't support AOL addresses");
+
+            // Blank string in the beginning will put the error in the summary section, not specifically on the email field
+            if (model.Email.Contains("aol.com")) ModelState.AddModelError("", "We don't support AOL addresses");
+
             // Makes sure the data is correct on the server side
             if (ModelState.IsValid)
             {
