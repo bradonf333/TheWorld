@@ -5,11 +5,18 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using TheWorld.ViewModel;
+using TheWorld.Services;
 
 namespace TheWorld.Controllers.Web
 {
     public class AppController : Controller
     {
+        private IMailService _mailService;
+
+        public AppController(IMailService mailService)
+        {
+            _mailService = mailService;
+        }
         /// <summary>
         /// Action: Method that returns a view
         /// 
@@ -29,6 +36,8 @@ namespace TheWorld.Controllers.Web
         [HttpPost]
         public IActionResult Contact(ContactViewModel model)
         {
+            _mailService.SendMail("bradon@f.com,", model.Email, "From TheWorld", model.Message);
+
             return View();
         }
 
