@@ -31,6 +31,8 @@ namespace TheWorld
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton(_config);
+
             // Can check if the env is a development machine or can test for a made up env created by company
             if (_env.IsDevelopment() || _env.IsEnvironment("Testing"))
             {
