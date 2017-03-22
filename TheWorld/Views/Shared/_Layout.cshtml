@@ -12,32 +12,42 @@
     <link href="~/lib/bootswatch/cosmo/bootstrap.min.css" rel="stylesheet" />
     <link href="~/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/styles/site.css" />
-    
+
 </head>
 <body>
     <div id="sidebar">
         <img src="~/img/user1.jpg" alt="headshot" class="headshot" />
         <span id="username">Bradon F.</span>
-        <ul class="menu">
+        <ul class="nav">
             <li class="active"><a asp-controller="App" asp-action="Index">Home</a></li>
             <li><a asp-controller="App" asp-action="About">About</a></li>
             <li><a asp-controller="App" asp-action="Contact">Contact</a></li>
         </ul>
     </div>
     <div id="wrapper">
-        <div id="main">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <ul class="nav navbar-nav navbar-left">
+                    <li>
+                        <button id="sidebarToggle" class="btn btn-primary">
+                            <i class="fa fa-chevron-circle-left"></i>
+                        </button>
+                    </li>
+                </ul>
+                <a>The World</a>
+            </div>
+        </nav>
+        <div id="main" class="container-fluid">
             <div>
-                <button id="sidebarToggle" class="btn btn-primary">
-                <i class="fa fa-chevron-circle-left"></i></button>
             </div>
             @RenderBody()
         </div>
-        <div id="footer">
+        <div id="footer" class="container-fluid">
             <p class="text-primary">&copy; 2017 The World ltd.</p>
         </div>
     </div>
     <script type="text/javascript" src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript"src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="~/scripts/main.js"></script>
 
     @RenderSection("scripts", false)
