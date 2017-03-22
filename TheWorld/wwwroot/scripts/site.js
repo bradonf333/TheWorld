@@ -30,7 +30,7 @@
         $sidebarAndWrapper.toggleClass("hide-sidebar");
         if ($sidebarAndWrapper.hasClass("hide-sidebar")) {
             $icon.removeClass("fa-chevron-circle-left");
-            $icon.removeClass("fa-chevron-circle-right");
+            $icon.addClass("fa-chevron-circle-right");
         } else {
             $icon.addClass("fa-chevron-circle-left");
             $icon.removeClass("fa-chevron-circle-right");
