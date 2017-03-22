@@ -29,11 +29,11 @@
         // ToggleClass adds class if doesnt exist or removes if it does
         $sidebarAndWrapper.toggleClass("hide-sidebar");
         if ($sidebarAndWrapper.hasClass("hide-sidebar")) {
-            $icon.removeClass("fa fa-chevron-circle-left");
-            $icon.addClass("fa fa-chevron-circle-right");
+            $icon.removeClass("fa-chevron-circle-left");
+            $icon.addClass("fa-chevron-circle-right");
         } else {
-            $icon.addClass("fa fa-chevron-circle-left");
-            $icon.removeClass("fa fa-chevron-circle-right");
+            $icon.addClass("fa-chevron-circle-left");
+            $icon.removeClass("fa-chevron-circle-right");
         }
     });
 })();
