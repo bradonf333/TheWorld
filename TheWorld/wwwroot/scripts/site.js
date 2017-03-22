@@ -21,6 +21,7 @@
 
     // Using jQuery gets both these elements and puts them in a "wrapped set" of DOM elements
     var $sidebarAndWrapper = $("#sidebar,#wrapper");
+    var $icon = $("#sidebarToggle i.fa");
 
     // When the sidebarToggle button is pressed will toggle the hide-sidebar class as necessary.
     // Also will change the toggle button text depending on the state of the hide-sidebar
@@ -28,9 +29,11 @@
         // ToggleClass adds class if doesnt exist or removes if it does
         $sidebarAndWrapper.toggleClass("hide-sidebar");
         if ($sidebarAndWrapper.hasClass("hide-sidebar")) {
-            $(this).text("Show Sidebar");
+            $icon.removeClass("fa-chevron-circle-left");
+            $icon.removeClass("fa-chevron-circle-right");
         } else {
-            $(this).text("Hide Sidebar");
+            $icon.addClass("fa-chevron-circle-left");
+            $icon.removeClass("fa-chevron-circle-right");
         }
     });
 })();
