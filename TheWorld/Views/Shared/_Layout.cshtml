@@ -37,12 +37,12 @@
                 <a asp-controller="App" asp-action="Index" class="navbar-brand">The World</a>
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="#" class="btn btn-sm btn-info">
+                        <a href="#" class="btn btn-sm btn-primary">
                             <i class="fa fa-save"></i> Save
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="btn btn-sm btn-info">
+                        <a href="#" class="btn btn-sm btn-primary">
                             <i class="fa fa-print"></i> Print
                         </a>
                     </li>
@@ -55,7 +55,9 @@
             @RenderBody()
         </div>
         <div id="footer" class="container-fluid">
-            <p class="text-primary">&copy; 2017 The World ltd.</p>
+            <div class="navbar navbar-inverse navbar-fixed-bottom">
+            <h4 class="text-center">&copy; 2017 The World ltd.</h4>
+            </div>
         </div>
     </div>
     <script type="text/javascript" src="~/lib/jquery/dist/jquery.min.js"></script>
