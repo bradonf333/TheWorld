@@ -1,2 +1,3 @@
 # TheWorld
-Web App created following PluralSight Tutorials
+Web App using ASP.net.
+Created following PluralSight Tutorials
