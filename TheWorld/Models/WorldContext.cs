@@ -16,7 +16,7 @@ namespace TheWorld.Models
         /// Can use the configuration information that is created in Startup.cs
         /// </summary>
         /// <param name="config"></param>
-        public WorldContext(IConfigurationRoot config)
+        public WorldContext(IConfigurationRoot config, DbContextOptions options) : base()
         {
             _config = config;
         }
