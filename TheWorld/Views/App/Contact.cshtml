@@ -26,20 +26,21 @@ Tag Helpers: asp-for="example"
             <div class="form-group">
                 <label asp-for="Name">Name</label>
                 <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name"></span>
+                <span asp-validation-for="Name" class="text-muted"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Email">Email</label>
                 <input type="email" asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email"></span>
+                <span asp-validation-for="Email" class="text-muted"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Message">Message</label>
                 <textarea cols="40" rows="4" asp-for="Message" class="form-control"></textarea>
-                <span asp-validation-for="Message"></span>
+                <span asp-validation-for="Message" class="text-muted"></span>
             </div>
-            <div>
-                <input type="submit" value="Send Message" class="btn btn-primary" />
+            <div class="form-group">
+                <input type="submit" value="Send Message" class="btn btn-success" />
+                <a asp-controller="App" asp-action="index" class="btn btn-primary">Cancel</a>
             </div>
         </form>
     </div>
