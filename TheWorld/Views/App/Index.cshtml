@@ -1,19 +1,28 @@
 ﻿<!-- These are elements that are specific to the home page only -->
-@{ 
+@{
     ViewBag.Title = "Home Page";
     Layout = "_Layout";
 }
-<h2>The World</h2>
-<p>This will be a fun website soon!</p>
+<div class="row">
+    <div class="col-md-6">
+        <h1>The World</h1>
+        <p>This will be a fun website soon!</p>
 
-<form>
-    <div>
-        <label>Date</label>
-        <input />
+        <form>
+            <div>
+                <label>Date</label>
+                <input />
+            </div>
+            <div>
+                <label>Location</label>
+                <input />
+            </div>
+            <div><input type="submit" value="Add" /></div>
+        </form>
     </div>
-    <div>
-        <label>Location</label>
-        <input />
+
+    <div class="col-md-6">
+        <h1>The Map</h1>
     </div>
-    <div><input type="submit" value="Add" /></div>
-</form>
+
+</div>
