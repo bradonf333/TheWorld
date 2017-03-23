@@ -16,11 +16,13 @@ namespace TheWorld.Controllers.Web
     {
         private IMailService _mailService;
         private IConfigurationRoot _config;
+        private WorldContext _context;
 
         public AppController(IMailService mailService, IConfigurationRoot config, WorldContext context)
         {
             _mailService = mailService;
             _config = config;
+            _context = context;
         }
         /// <summary>
         /// Action: Method that returns a view

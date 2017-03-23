@@ -46,6 +46,7 @@ namespace TheWorld
                 // Real mail implement
             }
 
+            // This makes the WorldContext Injectable to different areas
             services.AddDbContext<WorldContext>();
 
             services.AddMvc();
