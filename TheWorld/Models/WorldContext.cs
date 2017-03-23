@@ -4,14 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace TheWorld.Models
 {
     public class WorldContext : DbContext
     {
-        public WorldContext()
-        {
+        private IConfigurationRoot _config;
 
+        public WorldContext(IConfigurationRoot config)
+        {
+            _config = config;
         }
 
         public DbSet<Trip> Trips { get; set; }
@@ -22,7 +25,7 @@ namespace TheWorld.Models
             base.OnConfiguring(optionsBuilder);
 
             // Tell DbContext to use an SqlServer database
-            optionsBuilder.UseSqlServer("");
+            optionsBuilder.UseSqlServer();
         }
     }
 }

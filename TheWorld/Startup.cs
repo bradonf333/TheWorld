@@ -22,6 +22,19 @@ namespace TheWorld
         {
             _env = env;
 
+            /* 
+             * Builds the different parts of the config
+             * -env can tell if we are in a dev or prod environment
+             * 
+             * AddJsonFile is a config file where we can set certain elements.
+             *  -Currently it just has the email in it.
+             *  
+             * AddEnvironmentVariables is not currently being used. 
+             *  -This is something that can be used if you ever want to override the
+             *   config.json variables.
+             *  -This is the value from the properties. if you right click the project and
+             *   go to properties you can set Environment Variables
+             */
             var builder = new ConfigurationBuilder()
                 .SetBasePath(_env.ContentRootPath)
                 .AddJsonFile("config.json")
