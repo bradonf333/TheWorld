@@ -23,17 +23,23 @@ Tag Helpers: asp-for="example"
             {
                 <div>@ViewBag.UserMessage</div>
             }
-            <label asp-for="Name">Name</label>
-            <input asp-for="Name" />
-            <span asp-validation-for="Name"></span>
-            <label asp-for="Email">Email</label>
-            <input type="email" asp-for="Email" />
-            <span asp-validation-for="Email"></span>
-            <label asp-for="Message">Message</label>
-            <textarea cols="40" rows="4" asp-for="Message"></textarea>
-            <span asp-validation-for="Message"></span>
+            <div class="form-group">
+                <label asp-for="Name">Name</label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email">Email</label>
+                <input type="email" asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Message">Message</label>
+                <textarea cols="40" rows="4" asp-for="Message" class="form-control"></textarea>
+                <span asp-validation-for="Message"></span>
+            </div>
             <div>
-                <input type="submit" value="Send Message" />
+                <input type="submit" value="Send Message" class="btn btn-primary" />
             </div>
         </form>
     </div>
