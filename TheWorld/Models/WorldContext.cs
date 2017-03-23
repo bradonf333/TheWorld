@@ -12,6 +12,10 @@ namespace TheWorld.Models
     {
         private IConfigurationRoot _config;
 
+        /// <summary>
+        /// Can use the configuration information that is created in Startup.cs
+        /// </summary>
+        /// <param name="config"></param>
         public WorldContext(IConfigurationRoot config)
         {
             _config = config;
