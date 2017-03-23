@@ -30,7 +30,7 @@ namespace TheWorld.Models
 
             // Tell DbContext to use an SqlServer database
             // Gets the SqlConnectionString from the config.json file
-            optionsBuilder.UseSqlServer(_config["");
+            optionsBuilder.UseSqlServer(_config[""]);
         }
     }
 }
