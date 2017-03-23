@@ -32,6 +32,7 @@ namespace TheWorld.Controllers.Web
         /// </summary>
         public IActionResult Index()
         {
+            var data = _context.Trips.ToList(); // Returns a list of trip objects
             return View();
         }
 
