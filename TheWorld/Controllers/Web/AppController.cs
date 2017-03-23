@@ -8,6 +8,7 @@ using TheWorld.ViewModel;
 using TheWorld.Services;
 using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using TheWorld.Models;
 
 namespace TheWorld.Controllers.Web
 {
@@ -16,7 +17,7 @@ namespace TheWorld.Controllers.Web
         private IMailService _mailService;
         private IConfigurationRoot _config;
 
-        public AppController(IMailService mailService, IConfigurationRoot config)
+        public AppController(IMailService mailService, IConfigurationRoot config, WorldContext context)
         {
             _mailService = mailService;
             _config = config;
