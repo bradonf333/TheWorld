@@ -16,5 +16,13 @@ namespace TheWorld.Models
 
         public DbSet<Trip> Trips { get; set; }
         public DbSet<Stop> Stops { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            base.OnConfiguring(optionsBuilder);
+
+            // Tell DbContext to use an SqlServer database
+            optionsBuilder.UseSqlServer("");
+        }
     }
 }
