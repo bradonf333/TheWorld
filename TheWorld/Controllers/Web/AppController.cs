@@ -33,7 +33,8 @@ namespace TheWorld.Controllers.Web
         public IActionResult Index()
         {
             var data = _context.Trips.ToList(); // Returns a list of trip objects
-            return View();
+
+            return View(data);
         }
 
         public IActionResult Contact()
