@@ -6,8 +6,6 @@
 
   <ItemGroup>
     <Content Include="wwwroot\img\user1.jpg" />
-    <Content Include="wwwroot\lib\Knight.zip" />
-    <Content Include="wwwroot\lib\startbootstrap-grayscale-gh-pages.zip" />
     <Content Include="wwwroot\scripts\main.js" />
     <Content Include="wwwroot\scripts\site.js" />
     <Content Include="wwwroot\styles\site.css" />
@@ -26,8 +24,9 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="1.1.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="1.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="1.1.0" />
     <PackageReference Include="Microsoft.jQuery.Unobtrusive.Validation" Version="3.2.3" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="1.0.0-preview4-final" /> 
   </ItemGroup>
 
 </Project>
