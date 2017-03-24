@@ -63,13 +63,17 @@ namespace TheWorld
             services.AddDbContext<WorldContext>();
 
             // Makes the WorldContextSeedData available for use to use
+            // Dependency injection layer
             services.AddTransient<WorldContextSeedData>();
 
             services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, 
+            IHostingEnvironment env, 
+            ILoggerFactory loggerFactory,
+            WorldContextSeedData seeder)
         {
             // Checks to make sure this is a developement machine (check using alt+enter
             // If so then we can show the exception page which is easier to debug
@@ -91,6 +95,11 @@ namespace TheWorld
                     defaults: new { controller = "App", action = "Index" }
                     );
             });
+
+            // Calls the seeder.
+            // Since Configure is not asynchronusneed to use the Wait command to make it act asynchronus
+            // Will wait until it gets a return
+            seeder.EnsureSeedData().Wait();
         }
     }
 }
