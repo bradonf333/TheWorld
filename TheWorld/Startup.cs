@@ -62,6 +62,9 @@ namespace TheWorld
             // This makes the WorldContext Injectable to different areas
             services.AddDbContext<WorldContext>();
 
+            // Makes the WorldContextSeedData available for use to use
+            services.AddTransient<WorldContextSeedData>();
+
             services.AddMvc();
         }
 
