@@ -19,9 +19,26 @@ namespace TheWorld.Models
             _context = context;
         }
 
+        //
         public async Task EnsureSeedData()
         {
+            // Check to see if any Trips exist in the database
+            if(!_context.Trips.Any())
+            {
+                // Create a US Trip instance
+                var usTrip = new Trip()
+                {
+                    DateCreated = DateTime.UtcNow,
+                    Name = "US Trip",
+                    Stops = new List<Stop>()
+                    {
 
+                    }
+                };
+
+                // The usTrip instance to our database
+                _context.Trips.Add(usTrip);
+            }
         }
     }
 }
