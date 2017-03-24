@@ -30,14 +30,36 @@ namespace TheWorld.Models
                 {
                     DateCreated = DateTime.UtcNow,
                     Name = "US Trip",
+                    Username = "", // TODO Add UserName
                     Stops = new List<Stop>()
                     {
 
                     }
                 };
 
-                // The usTrip instance to our database
+                // Add the trip instance to our database
                 _context.Trips.Add(usTrip);
+
+                // Takes all the stops from the listed Trip and adds them to the Stops table
+                _context.Stops.AddRange(usTrip.Stops);
+
+                // Create a World Trip instance
+                var worldTrip = new Trip()
+                {
+                    DateCreated = DateTime.UtcNow,
+                    Name = "WorldTrip",
+                    Username = "", // TODO Add UserName
+                    Stops = new List<Stop>()
+                    {
+
+                    }
+                };
+
+                // Add the trip instance to our database
+                _context.Trips.Add(worldTrip);
+
+                // Takes all the stops from the listed Trip and adds them to the Stops table
+                _context.Stops.AddRange(worldTrip.Stops);
             }
         }
     }
