@@ -12,7 +12,7 @@ namespace TheWorld.Controllers.Api
     {
         // When this url is called it will then call this method
         /// <summary>
-        /// 
+        /// Serializes as Json file
         /// </summary>
         /// <returns>Json</returns>
         [HttpGet("api/trips")]
