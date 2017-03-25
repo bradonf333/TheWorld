@@ -30,12 +30,14 @@ namespace TheWorld.Controllers.Web
             _repository = repository;
             _logger = logger;
         }
+
         /// <summary>
         /// Action: Method that returns a view
         /// 
         /// Returns an interface
         /// Find view, render that view and return it to the user
         /// </summary>
+        /// <returns></returns>
         public IActionResult Index()
         {
             try

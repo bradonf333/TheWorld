@@ -11,6 +11,10 @@ namespace TheWorld.Controllers.Api
     public class TripsController : Controller
     {
         // When this url is called it will then call this method
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>Json</returns>
         [HttpGet("api/trips")]
         public JsonResult Get()
         {
