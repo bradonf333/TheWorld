@@ -38,11 +38,19 @@ namespace TheWorld.Controllers.Web
         /// </summary>
         public IActionResult Index()
         {
-            // Can almost think of this as a query request. Goes out to the repo which 
-            // has a method called GetAllTrips which basically returns a query
-            var data = _repository.GetAllTrips(); // Returns a list of trip objects
+            try
+            {
+                // Can almost think of this as a query request. Goes out to the repo which 
+                // has a method called GetAllTrips which basically returns a query
+                var data = _repository.GetAllTrips(); // Returns a list of trip objects
 
-            return View(data);
+                return View(data);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Failed to get trips in Index page: { ex.Message}");
+                return Redirect("/error");
+            }
         }
 
         public IActionResult Contact()
