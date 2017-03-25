@@ -16,8 +16,8 @@ namespace TheWorld.Controllers.Api
         public TripsController(IWorldRepository repository)
         {
             _repository = repository;
-
         }
+
         /* 
          * ================================================================
          *  IActionResult we can return a response code. Ok is for success
@@ -26,16 +26,19 @@ namespace TheWorld.Controllers.Api
          *  -If an error happens we can handle that here.
          * ================================================================
          */
+
         // When this url is called it will then call this method
         /// <summary>
-        /// Serializes as Json file
+        /// Serializes as Json file. Returns all our trips via the repository var
         /// </summary>
         /// <returns>Json</returns>
         [HttpGet("api/trips")]
         public IActionResult Get()
         {
-            return Ok(new Trip() { Name = "My Trip" });
+            return Ok(_repository.GetAllTrips());
         }
+
+
         /* 
          * ========================================================================
          *      -- Return the Api as JSON
