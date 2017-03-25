@@ -11,6 +11,8 @@ using TheWorld.Services;
 using Microsoft.Extensions.Configuration;
 using TheWorld.Models;
 using Newtonsoft.Json.Serialization;
+using AutoMapper;
+using TheWorld.ViewModel;
 
 namespace TheWorld
 {
@@ -88,6 +90,12 @@ namespace TheWorld
             ILoggerFactory loggerFactory,
             WorldContextSeedData seeder)
         {
+            // Map the TripViewModel to the Trip object
+            Mapper.Initialize(config =>
+            {
+                config.CreateMap<TripViewModel, Trip>();
+            });
+
             // Checks to make sure this is a developement machine (check using alt+enter
             // If so then we can show the exception page which is easier to debug
             if (env.IsDevelopment())
