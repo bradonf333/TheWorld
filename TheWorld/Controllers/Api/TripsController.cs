@@ -63,7 +63,7 @@ namespace TheWorld.Controllers.Api
                 // Save to the Database using the Mapper method
                 var newTrip = Mapper.Map<Trip>(trip);
 
-                return Created($"api/trips/{trip.Name}", newTrip);
+                return Created($"api/trips/{trip.Name}", Mapper.Map<TripViewModel>(newTrip));
             }
 
             return BadRequest(ModelState);
