@@ -16,13 +16,13 @@ namespace TheWorld.Controllers.Web
     {
         private IMailService _mailService;
         private IConfigurationRoot _config;
-        private WorldContext _context;
+        private IWorldRepository _repository;
 
-        public AppController(IMailService mailService, IConfigurationRoot config, WorldContext context)
+        public AppController(IMailService mailService, IConfigurationRoot config, IWorldRepository repository)
         {
             _mailService = mailService;
             _config = config;
-            _context = context;
+            _repository = repository;
         }
         /// <summary>
         /// Action: Method that returns a view
@@ -32,7 +32,9 @@ namespace TheWorld.Controllers.Web
         /// </summary>
         public IActionResult Index()
         {
-            var data = _context.Trips.ToList(); // Returns a list of trip objects
+            // Can almost think of this as a query request. Goes out to the repo which 
+            // has a method called GetAllTrips which basically returns a query
+            var data = _repository.GetAllTrips(); // Returns a list of trip objects
 
             return View(data);
         }
