@@ -8,6 +8,9 @@ using TheWorld.Models;
 
 namespace TheWorld.Controllers.Api
 {
+    // Centralized route for the Http requestes below
+    [Route("api/trips")]
+
     public class TripsController : Controller
     {
         private IWorldRepository _repository;
@@ -32,7 +35,7 @@ namespace TheWorld.Controllers.Api
         /// Serializes as Json file. Returns all our trips via the repository var
         /// </summary>
         /// <returns>Json</returns>
-        [HttpGet("api/trips")]
+        [HttpGet()]
         public IActionResult Get()
         {
             return Ok(_repository.GetAllTrips());
@@ -50,10 +53,10 @@ namespace TheWorld.Controllers.Api
         /// </summary>
         /// <param name="trip"></param>
         /// <returns></returns>
-        [HttpPost("api/trips")]
+        [HttpPost()]
         public IActionResult Post([FromBody]Trip trip)
         {
-            return Ok(true);
+            return Ok(trip.Name);
         }
 
 
