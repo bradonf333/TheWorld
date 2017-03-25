@@ -27,7 +27,7 @@ namespace TheWorld
              * -env can tell if we are in a dev or prod environment
              * 
              * AddJsonFile is a config file where we can set certain elements.
-             *  -Currently it just has the email in it.
+             *  -Holds the email and now it has the connectionString in it.
              *  
              * AddEnvironmentVariables is not currently being used. 
              *  -This is something that can be used if you ever want to override the
