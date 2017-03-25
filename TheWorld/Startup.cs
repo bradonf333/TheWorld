@@ -87,7 +87,11 @@ namespace TheWorld
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                loggerFactory.AddDebug();
+                loggerFactory.AddDebug(LogLevel.Information);
+            }
+            else
+            {
+                loggerFactory.AddDebug(LogLevel.Error);
             }
 
             // Changes the default files request
