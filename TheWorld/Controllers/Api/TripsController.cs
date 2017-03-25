@@ -62,7 +62,7 @@ namespace TheWorld.Controllers.Api
                 return Created($"api/trips/{trip.Name}", trip);
             }
 
-            return BadRequest("Bad Data");
+            return BadRequest(ModelState);
         }
 
 
