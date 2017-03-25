@@ -58,11 +58,11 @@ namespace TheWorld.Controllers.Api
         [HttpPost()]
         public IActionResult Post([FromBody]TripViewModel trip)
         {
-            // Save to the Database
-            var newTrip = Mapper.Map<Trip>(trip);
-
             if (ModelState.IsValid)
             {
+                // Save to the Database using the Mapper method
+                var newTrip = Mapper.Map<Trip>(trip);
+
                 return Created($"api/trips/{trip.Name}", newTrip);
             }
 
