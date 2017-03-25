@@ -57,6 +57,9 @@ namespace TheWorld.Controllers.Api
         [HttpPost()]
         public IActionResult Post([FromBody]TripViewModel trip)
         {
+            // Save to the Database
+
+
             if (ModelState.IsValid)
             {
                 return Created($"api/trips/{trip.Name}", trip);
