@@ -70,12 +70,15 @@ namespace TheWorld
             // Dependency injection layer
             services.AddTransient<WorldContextSeedData>();
 
+            // Makes it so we can log exceptions
+            services.AddLogging();
+
             services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, 
-            IHostingEnvironment env, 
+        public void Configure(IApplicationBuilder app,
+            IHostingEnvironment env,
             ILoggerFactory loggerFactory,
             WorldContextSeedData seeder)
         {
@@ -84,6 +87,7 @@ namespace TheWorld
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                loggerFactory.AddDebug();
             }
 
             // Changes the default files request
