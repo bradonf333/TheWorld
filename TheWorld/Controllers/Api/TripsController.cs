@@ -38,6 +38,24 @@ namespace TheWorld.Controllers.Api
             return Ok(_repository.GetAllTrips());
         }
 
+        // When this url is called it will then call this method
+        /// <summary>
+        /// Posts data from the url
+        /// 
+        /// FromBody "model binds" the data from the body of the request and binds it to the
+        /// object we have being passed in.
+        /// 
+        /// If we are passing in JSON then it will bind the property names from the JSON 
+        /// to the property names of the object being passed in.
+        /// </summary>
+        /// <param name="trip"></param>
+        /// <returns></returns>
+        [HttpPost("api/trips")]
+        public IActionResult Post([FromBody]Trip trip)
+        {
+            return Ok(true);
+        }
+
 
         /* 
          * ========================================================================
