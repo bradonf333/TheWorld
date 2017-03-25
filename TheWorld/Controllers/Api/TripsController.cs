@@ -43,9 +43,18 @@ namespace TheWorld.Controllers.Api
         [HttpGet()]
         public IActionResult Get()
         {
-            var results = _repository.GetAllTrips();
+            try
+            {
+                var results = _repository.GetAllTrips();
 
-            return Ok(Mapper.Map<IEnumerable<TripViewModel>>(results));
+                return Ok(Mapper.Map<IEnumerable<TripViewModel>>(results));
+            }
+            catch (Exception ex)
+            {
+                // TODO logging
+
+                return BadRequest($"Error occured {ex}");
+            }            
         }
 
         // When this url is called it will then call this method
