@@ -9,6 +9,7 @@ using TheWorld.Services;
 using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using TheWorld.Models;
+using Microsoft.Extensions.Logging;
 
 namespace TheWorld.Controllers.Web
 {
@@ -17,12 +18,17 @@ namespace TheWorld.Controllers.Web
         private IMailService _mailService;
         private IConfigurationRoot _config;
         private IWorldRepository _repository;
+        private ILogger<AppController> _logger;
 
-        public AppController(IMailService mailService, IConfigurationRoot config, IWorldRepository repository)
+        public AppController(IMailService mailService, 
+            IConfigurationRoot config, 
+            IWorldRepository repository,
+            ILogger<AppController> logger)
         {
             _mailService = mailService;
             _config = config;
             _repository = repository;
+            _logger = logger;
         }
         /// <summary>
         /// Action: Method that returns a view
