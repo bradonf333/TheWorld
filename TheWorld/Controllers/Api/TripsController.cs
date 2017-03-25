@@ -54,7 +54,6 @@ namespace TheWorld.Controllers.Api
             }
             catch (Exception ex)
             {
-                // TODO logging
                 _logger.LogError($"Failed to get all Trips: {ex}");
                 return BadRequest($"Error occured {ex}");
             }            
