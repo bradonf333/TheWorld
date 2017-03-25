@@ -12,7 +12,7 @@ namespace TheWorld.Controllers.Api
     {
         private IWorldRepository _repository;
 
-        // Inject the repository into this controller
+        // Inject the repository into this controller so it can be used in this class
         public TripsController(IWorldRepository repository)
         {
             _repository = repository;
