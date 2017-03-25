@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -58,11 +59,11 @@ namespace TheWorld.Controllers.Api
         public IActionResult Post([FromBody]TripViewModel trip)
         {
             // Save to the Database
-
+            var newTrip = Mapper.Map<Trip>(trip);
 
             if (ModelState.IsValid)
             {
-                return Created($"api/trips/{trip.Name}", trip);
+                return Created($"api/trips/{trip.Name}", newTrip);
             }
 
             return BadRequest(ModelState);
