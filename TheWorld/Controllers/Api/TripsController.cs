@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TheWorld.Models;
+using TheWorld.ViewModel;
 
 namespace TheWorld.Controllers.Api
 {
