@@ -91,9 +91,10 @@ namespace TheWorld
             WorldContextSeedData seeder)
         {
             // Map the TripViewModel to the Trip object
+            // ReverseMap lets you go the opposite way Trip -> TripViewModel
             Mapper.Initialize(config =>
             {
-                config.CreateMap<TripViewModel, Trip>();
+                config.CreateMap<TripViewModel, Trip>().ReverseMap();
             });
 
             // Checks to make sure this is a developement machine (check using alt+enter
