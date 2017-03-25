@@ -54,7 +54,7 @@ namespace TheWorld.Controllers.Api
         /// <param name="trip"></param>
         /// <returns></returns>
         [HttpPost()]
-        public IActionResult Post([FromBody]Trip trip)
+        public IActionResult Post([FromBody]TripViewModel trip)
         {
             if (ModelState.IsValid)
             {
