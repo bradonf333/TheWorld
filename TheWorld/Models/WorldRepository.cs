@@ -18,6 +18,12 @@ namespace TheWorld.Models
             _context = context;
         }
 
+        // Push to the context as a new object
+        public void AddTrip(Trip trip)
+        {
+            _context.Add(trip);
+        }
+
         /// <summary>
         /// Gets all the trips from the database
         /// </summary>
@@ -26,6 +32,15 @@ namespace TheWorld.Models
         {
             // Can think of this as a query
             return _context.Trips.ToList();
+        }
+
+        /// <summary>
+        /// SaveChangesAsync will return an int with the number of rows affected
+        /// </summary>
+        /// <returns></returns>
+        public async Task<bool> SaveChangesAsync()
+        {
+           return (await _context.SaveChangesAsync()) > 0;
         }
     }
 }
