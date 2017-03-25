@@ -62,6 +62,10 @@ namespace TheWorld
             // This makes the WorldContext Injectable to different areas
             services.AddDbContext<WorldContext>();
 
+            // This makes the Interface of the WorldRepository Injectable to different areas
+            // AddScoped - Only allows 1 per request cycle
+            services.AddScoped<IWorldRepository, WorldRepository>();
+
             // Makes the WorldContextSeedData available for use to use
             // Dependency injection layer
             services.AddTransient<WorldContextSeedData>();
