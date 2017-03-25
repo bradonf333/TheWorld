@@ -9,7 +9,7 @@ namespace TheWorld.Models
     /// <summary>
     /// 
     /// </summary>
-    public class WorldRepository
+    public class WorldRepository : IWorldRepository
     {
         private WorldContext _context;
 
