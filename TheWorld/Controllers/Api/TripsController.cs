@@ -35,12 +35,17 @@ namespace TheWorld.Controllers.Api
         // When this url is called it will then call this method
         /// <summary>
         /// Serializes as Json file. Returns all our trips via the repository var
+        /// 
+        /// Since we are getting multiple Trips we have to tell the mapper its IEnumberable Trips.
+        /// Now it will map the collection of Trips.
         /// </summary>
         /// <returns>Json</returns>
         [HttpGet()]
         public IActionResult Get()
         {
-            return Ok(_repository.GetAllTrips());
+            var results = _repository.GetAllTrips();
+
+            return Ok(Mapper.Map<IEnumerable<TripViewModel>>(results));
         }
 
         // When this url is called it will then call this method
