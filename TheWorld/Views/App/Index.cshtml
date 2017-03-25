@@ -1,4 +1,16 @@
-﻿<!-- These are elements that are specific to the home page only -->
+﻿<!-- 
+==============================================================================
+    -- Adding our Trip Model to the View or the html page --
+    
+    We are adding the Trip model here and we are strongly typing
+    it. Meaning we are specifically telling it what the model is
+    so we know before hand. Using it this way gives us access to all
+    the properties of the Trip object
+==============================================================================
+-->
+@model IEnumerable<TheWorld.Models.Trip>
+
+<!-- These are elements that are specific to the home page only -->
 @{
     ViewBag.Title = "Home Page";
     Layout = "_Layout";
@@ -25,6 +37,12 @@
 
     <div class="col-md-6">
         <h1>The Map</h1>
+        <ul>
+            @foreach (var item in Model)
+            {
+                <li>@item.Name : @item.DateCreated.ToString("d")</li>
+            }
+        </ul>
     </div>
 
 </div>
