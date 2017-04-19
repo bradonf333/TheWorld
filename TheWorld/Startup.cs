@@ -90,7 +90,7 @@ namespace TheWorld
             ILoggerFactory loggerFactory,
             WorldContextSeedData seeder)
         {
-            // Map the TripViewModel to the Trip object
+            // Map the ViewModels to their respective objects
             // ReverseMap lets you go the opposite way Trip -> TripViewModel
             Mapper.Initialize(config =>
             {
