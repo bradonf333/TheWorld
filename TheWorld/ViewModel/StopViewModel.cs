@@ -10,7 +10,7 @@ namespace TheWorld.ViewModel
     public class StopViewModel
     {
         [Required]
-        [StringLength(100, MinimumLength =5)]
+        [StringLength(100, MinimumLength = 5)]
         public string Name { get; set; } // City
 
         public double Latitude { get; set; }
