@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -6,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TheWorld.Models;
+using TheWorld.ViewModel;
 
 namespace TheWorld.Controllers.Api
 {
@@ -38,7 +40,7 @@ namespace TheWorld.Controllers.Api
                 // Since we are dealing with a Stop we need the trip name
                 var trip = _repository.GetTripByName(tripName);
 
-                return Ok(trip.Stops.OrderBy(s => s.Order).ToList());
+                return Ok(Mapper.Map<IEnumerable<StopViewModel>>(trip.Stops.OrderBy(s => s.Order).ToList()));
             }
             catch (Exception ex)
             {
