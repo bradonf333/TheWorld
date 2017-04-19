@@ -40,11 +40,13 @@ namespace TheWorld.Controllers.Api
 
                 return Ok(trip.Stops);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                _logger.LogError("Failed to get stops: {0}", ex);
             }
+
+            // If the first return is not reached then return a bad request
+            return BadRequest("Failed to get stops");
         }
     }
 }
