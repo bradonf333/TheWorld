@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -32,6 +33,22 @@ namespace TheWorld.Models
         {
             // Can think of this as a query
             return _context.Trips.ToList();
+        }
+
+        /// <summary>
+        /// Searches the Trips and returns the first one that has a name that matches the tripName parameter that is passed in
+        /// </summary>
+        /// <param name="tripName"></param>
+        /// <returns></returns>
+        public Trip GetTripByName(string tripName)
+        {
+            return _context.Trips
+                // Dont just need the Trips we need the stops so include them here
+                .Include(t => t.Stops)
+                // Figures out which Trip to return. TripName is passed in so search all Trips until the correct name is found
+                .Where(t => t.Name == tripName) 
+                // Return the first tripName that matches the given tripName parameter
+                .FirstOrDefault();
         }
 
         /// <summary>
