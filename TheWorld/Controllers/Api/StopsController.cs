@@ -11,6 +11,7 @@ using TheWorld.ViewModel;
 
 namespace TheWorld.Controllers.Api
 {
+    [Route("/api/trips/{tripName}/stops")] // Set up the route at the class level so it can be used throughout
     public class StopsController : Controller
     {
         private ILogger<StopsController> _logger;
@@ -33,7 +34,7 @@ namespace TheWorld.Controllers.Api
          *   -- Return the stops for a specific trip --
          * ==============================================
          */
-         [HttpGet("/api/trips/{tripName}/stops")] // Set up the route
+         [HttpGet("")]
         public IActionResult Get(string tripName)
         {
             try
