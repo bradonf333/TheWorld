@@ -33,6 +33,7 @@ namespace TheWorld.Controllers.Api
          *   -- Return the stops for a specific trip --
          * ==============================================
          */
+         [HttpGet("/api/trips/{tripName}/stops")] // Set up the route
         public IActionResult Get(string tripName)
         {
             try
