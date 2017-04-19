@@ -33,10 +33,18 @@ namespace TheWorld.Controllers.Api
          */
         public IActionResult Get()
         {
-            // Since we are dealing with a Stop we need the trip name
-            var trip = _repository.GetTripByName(string tripName);
+            try
+            {
+                // Since we are dealing with a Stop we need the trip name
+                var trip = _repository.GetTripByName(string tripName);
 
-            return Ok(trip.Stops);
+                return Ok(trip.Stops);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }
