@@ -31,14 +31,14 @@ namespace TheWorld.Controllers.Api
          *   -- Return the stops for a specific trip --
          * ==============================================
          */
-        public IActionResult Get()
+        public IActionResult Get(string tripName)
         {
             try
             {
                 // Since we are dealing with a Stop we need the trip name
-                var trip = _repository.GetTripByName(string tripName);
+                var trip = _repository.GetTripByName(tripName);
 
-                return Ok(trip.Stops);
+                return Ok(trip.Stops.OrderBy(s => s.Order).ToList());
             }
             catch (Exception ex)
             {
