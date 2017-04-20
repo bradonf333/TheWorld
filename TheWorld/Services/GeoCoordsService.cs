@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -26,6 +27,11 @@ namespace TheWorld.Services
                 Success = false,
                 Message = "Failed to get coordinates"
             };
+
+            // Info needed to make calls to bingMaps to get the long and lat
+            var apiKey = "";
+            var encodedName = WebUtility.UrlEncode(name);
+            var url = $"http://dev.virtualearth.net/REST/v1/Locations?q={encodedName}&key={apiKey}";
         }
         
     }
