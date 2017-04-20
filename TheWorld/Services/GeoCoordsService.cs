@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,11 +12,13 @@ namespace TheWorld.Services
     public class GeoCoordsService
     {
         private ILogger<GeoCoordsService> _logger;
+        private IConfigurationRoot _config;
 
-        // Ctor to initialize logger
-        public GeoCoordsService(ILogger<GeoCoordsService> logger)
+        // Ctor to initialize logger & config
+        public GeoCoordsService(ILogger<GeoCoordsService> logger, IConfigurationRoot config)
         {
             _logger = logger;
+            _config = config;
         }
 
         public async Task<GeoCoordsResult> GetCoordsAsync(string name)
