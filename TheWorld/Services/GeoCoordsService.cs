@@ -16,6 +16,11 @@ namespace TheWorld.Services
         {
             _logger = logger;
         }
+
+        public GetCoordsAsync(string name)
+        {
+
+        }
         
     }
 }
