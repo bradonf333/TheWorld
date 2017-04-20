@@ -11,6 +11,7 @@ namespace TheWorld.Services
     {
         private ILogger<GeoCoordsService> _logger;
 
+        // Ctor to initialize logger
         public GeoCoordsService(ILogger<GeoCoordsService> logger)
         {
             _logger = logger;
