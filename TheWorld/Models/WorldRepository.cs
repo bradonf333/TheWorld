@@ -19,6 +19,17 @@ namespace TheWorld.Models
             _context = context;
         }
 
+        public void AddStop(string tripName, Stop newStop)
+        {
+            // Check to see if the trip is a valid trip and if so add the stop
+            var trip = GetTripByName(tripName);
+
+            if (trip != null)
+            {
+                trip.Stops.Add(newStop);
+            }
+        }
+
         // Push to the context as a new object
         public void AddTrip(Trip trip)
         {
