@@ -69,7 +69,11 @@ namespace TheWorld
             // AddScoped - Only allows 1 per request cycle
             services.AddScoped<IWorldRepository, WorldRepository>();
 
-            // Makes the WorldContextSeedData available for use to use
+            // Makes the GeoCoordsService available for use
+            // Dependency injection layer
+            services.AddTransient<GeoCoordsService>();
+
+            // Makes the WorldContextSeedData available for use
             // Dependency injection layer
             services.AddTransient<WorldContextSeedData>();
 
