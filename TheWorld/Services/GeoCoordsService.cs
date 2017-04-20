@@ -19,7 +19,12 @@ namespace TheWorld.Services
 
         public async Task<GeoCoordsResult> GetCoordsAsync(string name)
         {
-
+            // Create instance of GeoCoordResult with default values
+            var result = new GeoCoordsResult()
+            {
+                Success = false,
+                Message = "Failed to get coordinates"
+            };
         }
         
     }
