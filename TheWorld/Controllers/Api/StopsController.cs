@@ -34,7 +34,7 @@ namespace TheWorld.Controllers.Api
          *   -- Return the stops for a specific trip --
          * ==============================================
          */
-         [HttpGet("")]
+        [HttpGet("")]
         public IActionResult Get(string tripName)
         {
             try
@@ -43,6 +43,27 @@ namespace TheWorld.Controllers.Api
                 var trip = _repository.GetTripByName(tripName);
 
                 return Ok(Mapper.Map<IEnumerable<StopViewModel>>(trip.Stops.OrderBy(s => s.Order).ToList()));
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Failed to get stops: {0}", ex);
+            }
+
+            // If the first return is not reached then return a bad request
+            return BadRequest("Failed to get stops");
+        }
+
+        /*
+         * ==============================================
+         *   -- Add a new stop for a specific trip --
+         * ==============================================
+         */
+        [HttpPost("")]
+        public IActionResult Post(string tripName, [FromBody]StopViewModel vm)
+        {
+            try
+            {
+
             }
             catch (Exception ex)
             {
