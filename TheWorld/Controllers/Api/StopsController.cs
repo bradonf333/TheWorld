@@ -59,7 +59,7 @@ namespace TheWorld.Controllers.Api
          * ==============================================
          */
         [HttpPost("")]
-        public IActionResult Post(string tripName, [FromBody]StopViewModel vm)
+        public async Task<IActionResult> Post(string tripName, [FromBody]StopViewModel vm)
         {
             try
             {
