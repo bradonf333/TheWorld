@@ -17,7 +17,7 @@ namespace TheWorld.Services
             _logger = logger;
         }
 
-        public GetCoordsAsync(string name)
+        public async Task<GeoCoordsResult> GetCoordsAsync(string name)
         {
 
         }
