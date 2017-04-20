@@ -32,7 +32,7 @@ namespace TheWorld.Services
             };
 
             // Info needed to make calls to bingMaps to get the long and lat
-            var apiKey = "";
+            var apiKey = _config["Keys:BingKey"]; // Access our BingKey
             var encodedName = WebUtility.UrlEncode(name);
             var url = $"http://dev.virtualearth.net/REST/v1/Locations?q={encodedName}&key={apiKey}";
         }
