@@ -38,10 +38,13 @@ namespace TheWorld.Services
             var encodedName = WebUtility.UrlEncode(name);
             var url = $"http://dev.virtualearth.net/REST/v1/Locations?q={encodedName}&key={apiKey}";
 
+            // Create a new HttpClient
             var client = new HttpClient();
 
+            // Calls the GetStrinAsync on that client using our ulr created above. Returns some JSON
             var json = await client.GetStringAsync(url);
 
+            // Parses the results from the call above
             // Read out the results
             // Fragile, might need to change if the Bing API changes
             var results = JObject.Parse(json);
@@ -59,8 +62,12 @@ namespace TheWorld.Services
                 }
                 else
                 {
+                    // If we find a successful match then set the long and lat and udpate our success and message vars
                     var coords = resources[0]["geocodePoints"][0]["coordinates"];
-
+                    result.Latitude = (double)coords[0];
+                    result.Longitude = (double)coords[1];
+                    result.Success = true;
+                    result.Message = "Success";
                 }
             }
         }
