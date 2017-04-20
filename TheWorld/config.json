@@ -5,5 +5,8 @@
   "ConnectionStrings": {
     //"WorldContextConnection": "Server=(localdb)\\MSSQLLocalDB;Database=TheWorldDb;Trusted_Connection=true;MultipleActiveResultSets=true"
     "WorldContextConnection": "Data Source=(localdb)\\MSSQLLocalDB;Database=TheWorldDb;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"
+  },
+  "Keys": {
+    "BingKey":  "DONTEVERPUTKEYSINSOURCECONTROL"
   }
 }
