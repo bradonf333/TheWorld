@@ -9,9 +9,11 @@ namespace TheWorld.Services
 {
     public class GeoCoordsService
     {
+        private ILogger<GeoCoordsService> _logger;
+
         public GeoCoordsService(ILogger<GeoCoordsService> logger)
         {
-
+            _logger = logger;
         }
         
     }
