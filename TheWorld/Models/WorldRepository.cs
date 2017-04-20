@@ -24,9 +24,11 @@ namespace TheWorld.Models
             // Check to see if the trip is a valid trip and if so add the stop
             var trip = GetTripByName(tripName);
 
+            // Since the stop is a related entity we need to add it to all appropriate locations
             if (trip != null)
             {
-                trip.Stops.Add(newStop);
+                trip.Stops.Add(newStop);        // Add the stop to the trip (Set the foreign key)
+                _context.Stops.Add(newStop);    // Add the stop to the stop table (add the stop object itself)
             }
         }
 
