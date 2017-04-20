@@ -71,6 +71,11 @@ namespace TheWorld.Controllers.Api
                     // Lookup the Geocodes
 
                     // Save to the database
+
+                    // Created is result of a post when you successfully save a new object
+                    // Use the mapper to convert the newStop back into a StopViewModel
+                    // ** Want to return the view model not the actual object **
+                    return Created($"/api/trips{tripName}/stops/{newStop.Name}", Mapper.Map<StopViewModel>(newStop));
                 }
             }
             catch (Exception ex)
