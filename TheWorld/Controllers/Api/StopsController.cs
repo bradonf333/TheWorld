@@ -64,11 +64,14 @@ namespace TheWorld.Controllers.Api
             try
             {
                 // Check if the VM is valid
+                if (ModelState.IsValid)
+                {
+                    // Create new Stop using the AutoMapper
+                    var newStop = Mapper.Map<Stop>(vm);
+                    // Lookup the Geocodes
 
-                // Lookup the Geocodes
-
-                // Save to the database
-
+                    // Save to the database
+                }
             }
             catch (Exception ex)
             {
