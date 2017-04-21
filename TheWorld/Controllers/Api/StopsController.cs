@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TheWorld.Models;
+using TheWorld.Services;
 using TheWorld.ViewModel;
 
 namespace TheWorld.Controllers.Api
@@ -16,16 +17,20 @@ namespace TheWorld.Controllers.Api
     {
         private ILogger<StopsController> _logger;
         private IWorldRepository _repository;
+        private GeoCoordsService _coordsService;
 
         /// <summary>
         /// Constructor to initialize local variables needed
         /// </summary>
         /// <param name="repository"></param>
         /// <param name="logger"></param>
-        public StopsController(IWorldRepository repository, ILogger<StopsController> logger)
+        public StopsController(IWorldRepository repository, 
+            ILogger<StopsController> logger,
+            GeoCoordsService coordsService)
         {
             _repository = repository;
             _logger = logger;
+            _coordsService = coordsService;
         }
 
 
