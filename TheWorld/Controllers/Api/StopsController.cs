@@ -24,6 +24,7 @@ namespace TheWorld.Controllers.Api
         /// </summary>
         /// <param name="repository"></param>
         /// <param name="logger"></param>
+        /// <param name="coordsService"></param>
         public StopsController(IWorldRepository repository, 
             ILogger<StopsController> logger,
             GeoCoordsService coordsService)
