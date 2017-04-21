@@ -83,7 +83,8 @@ namespace TheWorld.Controllers.Api
                     }
                     else
                     {
-
+                        newStop.Latitude = result.Latitude;
+                        newStop.Longitude = result.Longitude;
                     }
 
                     // Save to the database
