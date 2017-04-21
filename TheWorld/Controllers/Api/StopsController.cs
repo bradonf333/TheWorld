@@ -74,7 +74,17 @@ namespace TheWorld.Controllers.Api
                 {
                     // Create new Stop using the AutoMapper
                     var newStop = Mapper.Map<Stop>(vm);
+
                     // Lookup the Geocodes
+                    var result = await _coordsService.GetCoordsAsync(newStop.Name);
+                    if (!result.Success)
+                    {
+                        _logger.LogError(result.Message);
+                    }
+                    else
+                    {
+
+                    }
 
                     // Save to the database
                     _repository.AddStop(tripName, newStop);
